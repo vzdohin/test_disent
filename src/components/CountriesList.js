@@ -6,7 +6,7 @@ import { Pagination } from "antd";
 const CountriesList = () => {
   const [countries, setCountries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const countriesPerPage = 10; // Количество стран на странице
+  const countriesPerPage = 10;
 
   useEffect(() => {
     axios
@@ -19,7 +19,6 @@ const CountriesList = () => {
       });
   }, []);
 
-  // Получение текущих стран на странице
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const currentCountries = countries.slice(
@@ -27,7 +26,6 @@ const CountriesList = () => {
     indexOfLastCountry
   );
 
-  // Изменение текущей страницы
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -41,6 +39,7 @@ const CountriesList = () => {
         ))}
       </ul>
       <Pagination
+        style={{ marginBottom: "50px" }}
         defaultCurrent={1}
         total={countries.length}
         onChange={handlePageChange}

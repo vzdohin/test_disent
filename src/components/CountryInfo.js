@@ -1,4 +1,3 @@
-// src/components/CountryInfo.js
 import React from "react";
 
 const CountryInfo = ({ country }) => {
@@ -20,12 +19,6 @@ const CountryInfo = ({ country }) => {
         )}
         <p>Население: {country.population}</p>
       </div>
-
-      {/* <p>Языки: {Object.values(country.languages).join(", ")}</p> */}
-      <p>
-        {/* Валюта: {country.currencies.ALL.code} ({country.currencies.ALL.symbol}) */}
-      </p>
-      {/* Добавьте другие пункты, если нужно */}
     </div>
   );
 };
